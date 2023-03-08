@@ -176,8 +176,8 @@ if(isNoteClicked === "true"){
 let pageLayout = document.querySelector(".page-layout");
 let pageLines = document.querySelector(".typ");
 
-let pageHeight = $(pageLayout).height();
-// console.log(pageHeight);
+let pageHeight = $(document).height() - 101;
+console.log(pageHeight);
 
 
 $("textarea").each(function() {
