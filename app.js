@@ -108,7 +108,7 @@ save.addEventListener("click", ()=>{
     
         }else{
             notes.unshift(note);
-            console.log(notes);
+            // console.log(notes);
         }
     
        
@@ -172,3 +172,22 @@ if(isNoteClicked === "true"){
 
     timeContainer.textContent = note.time;
 }
+
+let pageLayout = document.querySelector(".page-layout");
+let pageLines = document.querySelector(".typ");
+
+let pageHeight = $(pageLayout).height();
+// console.log(pageHeight);
+
+
+$("textarea").each(function() {
+    this.setAttribute("style", "height:" + (this.scrollHeight) + "px: overflow-y: hidden;");
+}).on("input", function() {
+    this.style.height = 0;
+    this.style.height = (this.scrollHeight) + "px";
+
+    if (pageHeight <= (this.scrollHeight)) {
+        pageLayout.style.height = (this.scrollHeight + 60) + "px";
+    }
+})
+ 

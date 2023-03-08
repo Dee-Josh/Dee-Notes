@@ -1,5 +1,5 @@
 let notes = JSON.parse(localStorage.getItem("notes"));
-console.log(notes);
+// console.log(notes);
 
 
 const allNotes = document.querySelector(".new-text-template");
@@ -14,7 +14,7 @@ if (notes === null || notes[0] === undefined ) {
 }else{
     notes.forEach(note =>{
         noteIndex = note.index;
-        console.log(noteIndex);
+        // console.log(noteIndex);
         allNotes.innerHTML = allNotes.innerHTML + `
         <div class="new-note">
             <h2 class="note-title">${note.noteTitle}</h2>
@@ -25,19 +25,6 @@ if (notes === null || notes[0] === undefined ) {
         
     })
 }
-
-
-// trashCan.addEventListener("click", ()=>{
-//     console.log(noteIndex);
-// })
-
-
-let arr = [0, 1, 2, 3, 4, 5, 6];
-
-arr.splice(2, 1);
-
-console.log(arr);
-
 
 const eachNotes = document.querySelectorAll(".new-note");
 
