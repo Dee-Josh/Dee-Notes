@@ -115,13 +115,13 @@ textarea.overlay{
     font-size: 18px;
     line-height: 30px;
     resize: none ;
-    margin-bottom: 60px;
+    margin-bottom: 0px;
 }
 
 .page-layout{
-    height: calc(100vh - 90px);
+    /* height: calc(100vh - 90px); */
     overflow: hidden;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
 }
 
 textarea.overlay{

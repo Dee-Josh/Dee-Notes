@@ -49,6 +49,12 @@ if (hour === 0) {
 let min = time.getMinutes();
 
 
+
+if (JSON.stringify(min).length < 2) {
+    min = "0" + min;
+}
+
+
 timeContainer.textContent = `${day}/${month}/${year}  ${hour}:${min} ${amPm}`;
 
 
@@ -82,6 +88,9 @@ save.addEventListener("click", ()=>{
             hour = 12;
         }
         let min = time.getMinutes();
+        if (JSON.stringify(min).length < 2) {
+            min = "0" + min;
+        }
     
         timeContainer.textContent = `${day}/${month}/${year}  ${hour}:${min} ${amPm}`;
         let noteTime= `${day}/${month}/${year}  ${hour}:${min} ${amPm}`;
@@ -174,10 +183,17 @@ if(isNoteClicked === "true"){
 }
 
 let pageLayout = document.querySelector(".page-layout");
+
+
+
+pageLayout.style.height  = "calc(100vh - 90px)";
+
 let pageLines = document.querySelector(".typ");
 
-let pageHeight = $(document).height() - 101;
-console.log(pageHeight);
+const pageHeight = $(document).height() - 121;
+const height = $(document).height();
+
+let heightChanged = false;
 
 
 $("textarea").each(function() {
@@ -188,6 +204,14 @@ $("textarea").each(function() {
 
     if (pageHeight <= (this.scrollHeight)) {
         pageLayout.style.height = (this.scrollHeight + 60) + "px";
+        heightChanged = true;
     }
 })
  
+
+
+window.addEventListener("resize", ()=>{
+    if (!heightChanged ) {
+        pageLayout.style.height = (height - 121) + "px";
+    }
+})

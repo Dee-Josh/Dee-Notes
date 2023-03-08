@@ -84,7 +84,7 @@ header h1{
 
 .fa-trash-can{
     position: absolute;
-    z-index: 10000000;
+    z-index: 10;
     right: 5px;
     bottom: 5px;
 }
@@ -104,6 +104,7 @@ header h1{
     display: flex;
     justify-content: center;
     padding: 8px;
+    z-index: 10000000;
 }
 
 .new-note-plus h1{
@@ -130,6 +131,6 @@ header h1{
     }
 
     .sub-heading{
-        margin-top: 71px;
+        margin-top: 76px;
     }
 }

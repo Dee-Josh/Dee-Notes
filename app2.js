@@ -60,6 +60,5 @@ trashCan.forEach((can, index)=>{
         window.location = "index.html";
 
         noteDeleted = true;
-        
     })
 })
